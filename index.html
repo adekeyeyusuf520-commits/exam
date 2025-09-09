@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CBT Exam App</title>
+  <link rel="stylesheet" href="stylesheet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1 id="examTitle">Exam Title</h1>
+          <div class="pill" id="examMeta">Duration: <span id="duration"></span> • Questions: <span id="qcount"></span></div>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="badge" id="status">Not started</div>
+        <div class="timer" id="timer">00:00</div>
+        <button id="calcToggle" class="calc-toggle" title="Open scientific calculator">Calculator</button>
+      </div>
+    </header>
+
+    <main class="panel">
+      <div class="toolbar">
+        <div class="controls">
+          <button id="exportBtn">Export Results</button>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+
+      <div class="content">
+        <aside class="nav">
+          <h3>Questions</h3>
+          <div id="qGrid" class="grid"></div>
+        </aside>
+
+        <section class="main-area">
+          <div id="qCard" class="question" aria-live="polite"></div>
+
+          <div class="bottom">
+            <div class="left-controls">
+              <button id="prevBtn">⟵ Previous</button>
+              <button id="nextBtn">Next ⟶</button>
+            </div>
+            <div class="right-controls">
+              <button id="submitBtn" class="primary">Submit</button>
+            </div>
+          </div>
+
+          <section id="results" class="results" style="display:none"></section>
+          <canvas id="scoreChart" width="300" height="300"></canvas>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      Teacher: Edit <code>exam-config.json</code> to change questions or time.
+    </footer>
+  </div>
+
+  <!-- Calculator overlay -->
+  <div id="calculator" class="calculator" aria-hidden="true">
+    <div class="calc-header">
+      <div>Scientific Calculator</div>
+      <button id="calcClose" title="Close">✕</button>
+    </div>
+    <input id="calcDisplay" class="calc-display" readonly />
+    <div class="calc-keys" id="calcKeys"></div>
+    <div class="calc-row">
+      <button id="calcAns" class="wide">ANS</button>
+      <button id="calcClear">C</button>
+      <button id="calcBack">⌫</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

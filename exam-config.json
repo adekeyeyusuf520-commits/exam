@@ -1,9 +1,43 @@
 {
   "title": "test exam",
   "timeMinutes": 1,
+  "shuffleQuestions": false,
   "questions": [
     {
-      "text": "what is your name",
+      "text": "qestion one",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "marks": 1
+    },
+    {
+      "text": "New question?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "marks": 1
+    },
+    {
+      "text": "New question?",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "marks": 1
+    },
+    {
+      "text": "New question?",
       "options": [
         "Option A",
         "Option B",
